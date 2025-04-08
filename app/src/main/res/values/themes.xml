@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RouterConfAndMon" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Engedélyezi az activity transition-öket -->
+        <item name="android:windowContentTransitions">true</item>
+
+        <!-- Belépési és kilépési animációk -->
+        <item name="android:windowEnterTransition">@transition/fade</item>
+        <item name="android:windowExitTransition">@transition/fade</item>
+    </style>
+
+    <style name="Theme.RouterConfAndMon" parent="Base.Theme.RouterConfAndMon" />
+</resources>

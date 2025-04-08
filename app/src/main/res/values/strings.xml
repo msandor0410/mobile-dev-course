@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Router Config &amp; Monitor</string>
+    <string name="connect">Connect</string>
+    <string name="not_connected">Not connected</string>
+    <string name="signal_strength_unknown">Signal strength: Unknown</string>
+    <string name="ip_address">IP address: -</string>
+    <string name="refresh">Refresh</string>
+    <string name="status">Status</string>
+    <string name="login">Log in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_account">Have an account? Log in.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="logout">Log out</string>
+    <string name="doesn_t_have_an_account_sign_up">Doesn\'t have an account? Sign up</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="_192_168_0_1">192.168.0.1</string>
+    <string name="register">Create an Account</string>
+</resources>

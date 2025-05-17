@@ -13,10 +13,14 @@ Built as part of the *Mobile Application Development Course (Spring 2025)* at th
 
 The **Router Config & Monitor** app allows users to:
 
-- Enter and manage the IP address of their router
-- Simulate connection and signal strength
-- View router information in a structured UI
-- Log in and register securely via Firebase Authentication
+- Register and log in via Firebase Authentication
+- Save and manage router configurations
+- View router list with detailed info
+- Simulate signal strength and connection feedback
+- Edit or delete existing router entries
+- Scan available Wi-Fi networks and auto-fill router data
+- Securely store Wi-Fi passwords using Android Keystore
+- Receive notifications about router actions (e.g., added)
 
 ---
 
@@ -36,35 +40,41 @@ This application was developed for coursework purposes.
 ## 🛠️ Technologies Used
 
 - **Java** – Native Android development
-- **Firebase Authentication** – Secure login and registration
+- **Firebase Authentication & Firestore**
 - **Android Studio** – Official IDE
-- **Android XML Layout** – For modern, responsive UI
+- **ConstraintLayout**, LinearLayout
+- **NotificationManager**, Android Keystore
+- **Intent-based Navigation**, Lifecycle methods
+- **Firestore CRUD** operations
+- **Android Permissions**: Location, Internet
 
 ---
 
-## 📦 Features
+## 📦 Features (Checklist)
 
-| Feature                             | Status |
-|-------------------------------------|--------|
-| Firebase Authentication             | ✅     |
-| User Registration                   | ✅     |
-| Login and Logout Functionality      | ✅     |
-| IP Address Input and Display        | ✅     |
-| Simulated Router Connection Status  | ✅     |
-| Emulated Signal Strength Display    | ✅     |
-| Custom Dashboard with Status Cards  | ✅     |
-| Clean UI Based on Tailwind-Like Style | ✅     |
-| APK Tested on Emulator              | ✅     |
+| Feature                                         | Status |
+|-------------------------------------------------|--------|
+| Firebase Authentication (Login & Register)      | ✅     |
+| CRUD: Create, Read, Update, Delete Routers      | ✅     |
+| Secure Wi-Fi Password Encryption (Keystore)     | ✅     |
+| Animated UI Elements                            | ✅     |
+| Permission Usage (Location, Internet)           | ✅     |
+| Notifications                                   | ✅     |
+| Multiple Activities (>4)                        | ✅     |
+| Intent-based Navigation                         | ✅     |
+| Lifecycle Hooks (onResume, onStart)             | ✅     |
+| Firestore Usage                                 | ✅     |
+| Responsive Layout Design                        | ✅     |
 
 ---
 
 ## 📸 Screenshots
 
-| Login | Dashboard |
-|-------|-----------|
+| Login                          | Dashboard                          |
+|--------------------------------|------------------------------------|
 | ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) |
 
-> *(Screenshots are for demonstration only. UI subject to minor changes.)*
+> *(Screenshots are for demonstration only. UI subject to change.)*
 
 ---
 

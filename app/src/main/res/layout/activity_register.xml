@@ -3,15 +3,15 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FAFC">
+    android:background="#F8FAFC"
+    android:padding="40dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="72dp">
+        android:gravity="center_horizontal">
 
         <TextView
             android:id="@+id/titleText"
@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:background="@drawable/input_bg"
             android:padding="12dp"
             android:textColor="#0e141b"

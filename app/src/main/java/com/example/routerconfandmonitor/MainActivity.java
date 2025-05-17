@@ -2,11 +2,12 @@ package com.example.routerconfandmonitor;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.ActivityOptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(v -> {
+            Animation anim = AnimationUtils.loadAnimation(this, R.anim.button_click);
+            v.startAnimation(anim);
+
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
 
@@ -54,9 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                            startActivity(intent);
-                            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            startActivity(new Intent(MainActivity.this, DashboardActivity.class));
                             finish();
                         } else {
                             Toast.makeText(MainActivity.this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -66,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
         signupButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-            startActivity(intent, android.app.ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+            startActivity(intent);
         });
 
         forgotPassword.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "Password reset is not implemented yet! 😅", Toast.LENGTH_SHORT).show();
+            // TODO: Jelszó visszaállítás indítása
         });
     }
 }

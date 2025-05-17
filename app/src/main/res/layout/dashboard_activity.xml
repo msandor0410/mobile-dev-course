@@ -1,107 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rootLayout"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="40dp"
     android:background="#F8FAFC">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Fejléc szöveg -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="72dp">
+        android:text="@string/ping_console"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#0e141b"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/settingsIcon"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#0e141b"
-            android:layout_marginBottom="16dp" />
+    <!-- Fogaskerék ikon -->
+    <ImageView
+        android:id="@+id/settingsIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_gear"
+        android:contentDescription="@string/settings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
-        <!-- Fejléc + fogaskerék -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
+    <!-- IP cím beviteli mező -->
+    <EditText
+        android:id="@+id/ipInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_ip_e_g_8_8_8_8"
+        android:inputType="text"
+        android:background="@drawable/input_bg"
+        android:padding="12dp"
+        android:textColor="#0e141b"
+        android:textColorHint="#4e7397"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
 
-            <ImageView
-                android:id="@+id/settingsIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_gear"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="@+id/settings"
-                android:padding="4dp" />
-        </RelativeLayout>
+    <!-- Fekete konzol kimenet -->
+    <TextView
+        android:id="@+id/pingOutput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:minHeight="200dp"
+        android:background="#111111"
+        android:textColor="#00FF00"
+        android:padding="8dp"
+        android:textIsSelectable="true"
+        android:scrollbars="vertical"
+        android:text="@string/output_appears_here"
+        app:layout_constraintTop_toBottomOf="@+id/ipInput"
+        app:layout_constraintBottom_toTopOf="@+id/pingButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="start|top" />
 
-        <EditText
-            android:id="@+id/ipInput"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:hint="@string/_192_168_0_1"
-            android:background="@drawable/input_bg"
-            android:padding="16dp"
-            android:textColor="#0e141b"
-            android:textColorHint="#4e7397"
-            android:layout_marginBottom="12dp" />
+    <!-- Ping indító gomb -->
+    <Button
+        android:id="@+id/pingButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/start_ping"
+        android:backgroundTint="#1980e6"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/pingOutput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-        <Button
-            android:id="@+id/connectButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="@string/connect"
-            android:backgroundTint="#1980e6"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="24dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/status"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#0e141b"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/statusValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/not_connected"
-            android:textSize="16sp"
-            android:textColor="#4e7397"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:id="@+id/signalValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/signal_strength_unknown"
-            android:textSize="16sp"
-            android:textColor="#4e7397"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:id="@+id/ipValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ip_address"
-            android:textSize="16sp"
-            android:textColor="#4e7397"
-            android:layout_marginBottom="24dp" />
-
-        <Button
-            android:id="@+id/refreshButton"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="@string/refresh"
-            android:backgroundTint="#e7edf3"
-            android:textColor="#0e141b" />
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

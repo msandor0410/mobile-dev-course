@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:layout_marginTop="40dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saj_t_routerek"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0e141b"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Fejléc + fogaskerék -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/settingsIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_gear"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/settings"
+                android:padding="4dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/addRouterButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#1980e6"
+            android:text="@string/j_router_hozz_ad_sa"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/noRoutersText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nincs_m_g_mentett_router"
+            android:textSize="16sp"
+            android:textColor="#4e7397"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:id="@+id/routerListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</ScrollView>
